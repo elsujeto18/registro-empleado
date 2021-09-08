@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+{% block cuerpo %}
+
+{% include 'includes/header.html' %}
+
+
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell">Registrar Empleado</h1>
+
+
+       
+
+        <form class='grid-x grid-margin-x' method="POST">{% csrf_token %}
+            <div class="large-6 cell">
+                <label>Nombres: 
+                    {{form.first_name}}
+                </label>
+            </div>
+            <div class="large-6 cell">
+                <label>Apellidos: 
+                    {{form.last_name}}
+                </label>
+            </div>
+            <div class="large-6 cell">
+                <label>Trabajo: 
+                    {{form.job}}
+                </label>
+            </div>
+            <div class="large-6 cell">
+                <label>Área: 
+                    {{form.departamento}}
+                </label>
+            </div>
+            <div class="large-12 cell">
+                <label>Habilidades: 
+                    {{form.habilidad}}
+                </label>
+            </div>
+            <div class="large-12 cell">
+                <button type="summit" class="success button">Agregar Empleado</button>
+            </div>
+
+            <!--{{form.as_p}}-->
+            
+        </form>
+        
+        
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+{% endblock cuerpo %}

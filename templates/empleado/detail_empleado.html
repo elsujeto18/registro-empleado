@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+
+
+{% block titulo %}
+
+    {{object.first_name}}
+    
+{% endblock titulo %}
+
+
+
+
+    
+
+{% block cuerpo %}
+{% include 'includes/header.html' %}
+
+
+
+<div class="grid-container">
+
+    <div class="grid-x">
+
+        <h1 class="cell">Detalle de un Empleado</h1>
+
+       <!-- {{empleado}} -->
+        <label >Nombre</label>
+        <p>{{empleado.first_name}}</p>
+        <label > Apellido</label>
+        <p>{{empleado.last_name}}</p>
+
+
+        <div class="cell grid-x callout">
+            <div class="cell">
+                <label >Nombre:</label>
+                <p>{{empleado.first_name}}</p>
+
+            </div>
+            <div class="cell">
+                <label >Apellido:</label>
+                <p>{{empleado.last_name}}</p>
+
+            </div>
+            <div class="cell">
+                <label >Departamento:</label>
+                <p>{{empleado.departamento}}</p>
+
+            </div>
+            <div class="cell">
+                <label >Trabajo: </label>
+                <p>{{empleado.get_job_display}}</p>
+
+            </div>
+            <div class="cell">
+                <label >Habilidades: </label>
+               
+                <ul class="vertical menu">
+                    {% for h in empleado.habilidad.all %}
+                        <li>{{h}}</li> 
+                    {% endfor %}
+                </ul>
+
+            </div>
+
+            
+        </div>
+
+
+
+        <!-- {{object}}-->
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+{% endblock cuerpo %}
